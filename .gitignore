@@ -1,7 +1,38 @@
+# Dependencies
 node_modules/
 backend/node_modules/
 frontend/node_modules/
 
+# Environment variables
 .env
+.env.*
+backend/.env
+frontend/.env
+frontend/.env.*
+
+# Build output
 dist/
 build/
+frontend/dist/
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+backend/local_shop_finder.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Vite cache
+.vite/
