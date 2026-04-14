@@ -24,6 +24,22 @@ ShopEase is a hyperlocal commerce platform that connects customers with nearby l
 
 ---
 
+## 🖼️ Screenshots
+
+### Customer Dashboard
+![Customer Dashboard](screenshots/customer-dashboard.png)
+
+### Product Search with Map
+![Product Search](screenshots/product-search.png)
+
+### Shop Detail Page
+![Shop Detail](screenshots/shop-detail.png)
+
+### Shop Owner Dashboard
+![Shop Dashboard](screenshots/shop-dashboard.png)
+
+---
+
 ## 🗂️ Project Structure
 
 ```
