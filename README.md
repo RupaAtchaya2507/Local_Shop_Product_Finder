@@ -7,28 +7,98 @@ ShopEase is a hyperlocal commerce platform that connects customers with nearby l
 ## 📸 Screenshots
 
 ### 🏠 Home & Auth
-| Homepage | Login Page | Sign Up / Register Shop |
-|----------|------------|-------------------------|
-| ![Homepage](screenshots/homepage.png) | ![Login](screenshots/loginpage.png) | ![Register Shop](screenshots/register_your_shop.png) |
+
+<table>
+  <tr>
+    <td align="center"><b>Homepage</b></td>
+    <td align="center"><b>Login Page</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/homepage.png" width="480"/></td>
+    <td><img src="screenshots/loginpage.png" width="480"/></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><b>Sign Up / Register Shop</b></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="screenshots/register_your_shop.png" width="480"/></td>
+  </tr>
+</table>
+
+---
 
 ### 👤 Customer
-| Customer Dashboard | List of Shops | Shop Details on Map |
-|--------------------|---------------|---------------------|
-| ![Customer Dashboard](screenshots/customer_dashboard.png) | ![List of Shops](screenshots/list_of_shops.png) | ![Shop Details in Map](screenshots/shop%20details%20in%20map.png) |
 
-| Shortest Route | Wishlist | Recommendations |
-|----------------|----------|-----------------|
-| ![Shortest Route](screenshots/shortest_route.png) | ![Wishlist](screenshots/wishlist.png) | ![Recommendations](screenshots/recommendation_features.png) |
+<table>
+  <tr>
+    <td align="center"><b>Customer Dashboard</b></td>
+    <td align="center"><b>List of Shops</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/customer_dashboard.png" width="480"/></td>
+    <td><img src="screenshots/list_of_shops.png" width="480"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Shop Details on Map</b></td>
+    <td align="center"><b>Shortest Route</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/shop details in map.png" width="480"/></td>
+    <td><img src="screenshots/shortest_route.png" width="480"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Wishlist</b></td>
+    <td align="center"><b>Recommendations</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/wishlist.png" width="480"/></td>
+    <td><img src="screenshots/recommendation_features.png" width="480"/></td>
+  </tr>
+</table>
+
+---
 
 ### ⭐ Reviews & Chat
-| Shop Reviews | Review Page | Chat (Customer) | Chat (Shop Owner) |
-|--------------|-------------|-----------------|-------------------|
-| ![Shop Reviews](screenshots/shop_reviews.png) | ![Review Page](screenshots/review%20page.png) | ![Chat Customer](screenshots/chat_on_customer_side.png) | ![Chat Shop Owner](screenshots/chat_on_shopowner_side.png) |
+
+<table>
+  <tr>
+    <td align="center"><b>Shop Reviews</b></td>
+    <td align="center"><b>Review Page</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/shop_reviews.png" width="480"/></td>
+    <td><img src="screenshots/review page.png" width="480"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Chat (Customer)</b></td>
+    <td align="center"><b>Chat (Shop Owner)</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/chat_on_customer_side.png" width="480"/></td>
+    <td><img src="screenshots/chat_on_shopowner_side.png" width="480"/></td>
+  </tr>
+</table>
+
+---
 
 ### 🏪 Shop Owner
-| Shop Dashboard | Add Product | View Shop |
-|----------------|-------------|----------|
-| ![Shop Dashboard](screenshots/shopkeeper_dashboard.png) | ![Add Product](screenshots/add_product.png) | ![View Shop](screenshots/view_shop.png) |
+
+<table>
+  <tr>
+    <td align="center"><b>Shop Dashboard</b></td>
+    <td align="center"><b>Add Product</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/shopkeeper_dashboard.png" width="480"/></td>
+    <td><img src="screenshots/add_product.png" width="480"/></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><b>View Shop</b></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="screenshots/view_shop.png" width="480"/></td>
+  </tr>
+</table>
 
 ---
 
