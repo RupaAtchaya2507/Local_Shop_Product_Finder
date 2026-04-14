@@ -4,6 +4,34 @@ ShopEase is a hyperlocal commerce platform that connects customers with nearby l
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home & Auth
+| Homepage | Login Page | Sign Up / Register Shop |
+|----------|------------|-------------------------|
+| ![Homepage](screenshots/homepage.png) | ![Login](screenshots/loginpage.png) | ![Register Shop](screenshots/register_your_shop.png) |
+
+### 👤 Customer
+| Customer Dashboard | List of Shops | Shop Details on Map |
+|--------------------|---------------|---------------------|
+| ![Customer Dashboard](screenshots/customer_dashboard.png) | ![List of Shops](screenshots/list_of_shops.png) | ![Shop Details in Map](screenshots/shop%20details%20in%20map.png) |
+
+| Shortest Route | Wishlist | Recommendations |
+|----------------|----------|-----------------|
+| ![Shortest Route](screenshots/shortest_route.png) | ![Wishlist](screenshots/wishlist.png) | ![Recommendations](screenshots/recommendation_features.png) |
+
+### ⭐ Reviews & Chat
+| Shop Reviews | Review Page | Chat (Customer) | Chat (Shop Owner) |
+|--------------|-------------|-----------------|-------------------|
+| ![Shop Reviews](screenshots/shop_reviews.png) | ![Review Page](screenshots/review%20page.png) | ![Chat Customer](screenshots/chat_on_customer_side.png) | ![Chat Shop Owner](screenshots/chat_on_shopowner_side.png) |
+
+### 🏪 Shop Owner
+| Shop Dashboard | Add Product | View Shop |
+|----------------|-------------|----------|
+| ![Shop Dashboard](screenshots/shopkeeper_dashboard.png) | ![Add Product](screenshots/add_product.png) | ![View Shop](screenshots/view_shop.png) |
+
+---
+
 ## 📸 Features at a Glance
 
 ### 👤 Customer
@@ -145,7 +173,7 @@ JWT_SECRET=your_secret_here
 PORT=5000
 ```
 
-> ⚠️ The JWT secret is currently hardcoded in the source. Move it to `.env` before deploying to production.
+> ⚠️ Set a strong `JWT_SECRET` in your `.env` before deploying to production.
 
 ---
 
