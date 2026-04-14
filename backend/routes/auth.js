@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const db = require("../db");
 
 const router = express.Router();
-const JWT_SECRET = process.env.JWT_SECRET || "secretkey";
+const JWT_SECRET = "secretkey";
 
 /* SIGNUP */
 router.post("/signup", async (req, res) => {

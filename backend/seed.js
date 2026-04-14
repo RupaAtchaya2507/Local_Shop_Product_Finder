@@ -32,15 +32,11 @@ const o7  = db.prepare("INSERT INTO users (name, email, password, user_type) VAL
 const o8  = db.prepare("INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)").run("Deepa",    "deepa@gmail.com",    password, "shop_owner");
 const o9  = db.prepare("INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)").run("Senthil",  "senthil@gmail.com",  password, "shop_owner");
 const o10 = db.prepare("INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)").run("Anitha",   "anitha@gmail.com",   password, "shop_owner");
-const o11 = db.prepare("INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)").run("Fesh",     "fesh@gmail.com",     password, "shop_owner");
-const o12 = db.prepare("INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)").run("Dinesh",   "dinesh@gmail.com",   password, "shop_owner");
-const o13 = db.prepare("INSERT INTO users (name, email, password, user_type) VALUES (?, ?, ?, ?)").run("Saranya",  "saranya@gmail.com",  password, "shop_owner");
 
-// ── SHOPS (spread around your location) ──
-// ✅ IMPORTANT: Change BASE_LAT and BASE_LNG to YOUR current GPS coordinates
-// Get your coordinates from: https://www.latlong.net  or Google Maps (right-click → "What's here?")
-const BASE_LAT = 11.295485;
-const BASE_LNG = 77.663316;
+// ── SHOPS (spread around Chennai 13.26, 80.02) ──
+// To use your own location: change BASE_LAT and BASE_LNG below
+const BASE_LAT = 13.0895;
+const BASE_LNG = 80.2739;
 
 // Helper to offset coordinates by km
 function offset(lat, lng, dLatKm, dLngKm) {
@@ -63,10 +59,6 @@ const [lat7,  lng7]  = offset(BASE_LAT, BASE_LNG,  3.0, -2.5);
 const [lat8,  lng8]  = offset(BASE_LAT, BASE_LNG, -3.5, -1.0);
 const [lat9,  lng9]  = offset(BASE_LAT, BASE_LNG,  0.2,  4.0);
 const [lat10, lng10] = offset(BASE_LAT, BASE_LNG,  4.5,  1.5);
-// New shops very close to base location (0.3 to 1.5 km)
-const [lat11, lng11] = offset(BASE_LAT, BASE_LNG,  0.3, -0.2);  // Fresh Mart
-const [lat12, lng12] = offset(BASE_LAT, BASE_LNG, -0.4,  0.5);  // Daily Needs Store
-const [lat13, lng13] = offset(BASE_LAT, BASE_LNG,  0.8,  0.6);  // City Mart
 
 const s1  = addShop.run(o1.lastInsertRowid,  "Ramesh General Store",       "Near Bus Stop, Vengal Village, Tiruvallur",        "9876543210", lat1,  lng1,  4.5).lastInsertRowid;
 const s2  = addShop.run(o2.lastInsertRowid,  "Priya Electronics Hub",      "Main Road, Thiruninravur, Tiruvallur",             "9876543211", lat2,  lng2,  4.2).lastInsertRowid;
@@ -78,9 +70,6 @@ const s7  = addShop.run(o7.lastInsertRowid,  "Murugan Pharmacy",           "NH 7
 const s8  = addShop.run(o8.lastInsertRowid,  "Deepa Fashion Store",        "Anna Nagar, Tiruvallur",                           "9876543217", lat8,  lng8,  4.1).lastInsertRowid;
 const s9  = addShop.run(o9.lastInsertRowid,  "Senthil Stationery World",   "College Road, Vengal, Tiruvallur",                 "9876543218", lat9,  lng9,  4.5).lastInsertRowid;
 const s10 = addShop.run(o10.lastInsertRowid, "Anitha Organic Store",       "Panchayat Road, Kadambathur, Tiruvallur",          "9876543219", lat10, lng10, 4.9).lastInsertRowid;
-const s11 = addShop.run(o11.lastInsertRowid, "Fresh Mart",                  "Near Muthu Mahal, Veppampalayam, Erode",          "9876543220", lat11, lng11, 4.6).lastInsertRowid;
-const s12 = addShop.run(o12.lastInsertRowid, "Daily Needs Store",           "Bus Stand Road, Tiruvallur",                      "9876543221", lat12, lng12, 4.3).lastInsertRowid;
-const s13 = addShop.run(o13.lastInsertRowid, "City Mart",                   "Market Complex, Tiruvallur Town",                 "9876543222", lat13, lng13, 4.5).lastInsertRowid;
 
 const IMG = {
   // Stationery
@@ -364,81 +353,6 @@ p.run(s10, "Chia Seeds 200g",   "Grocery", 150, 80,  "");
 p.run(s10, "Vitamin C Tablets", "Medicine", 130,150, "");
 p.run(s10, "Moringa Powder",    "Medicine", 200, 70,  "");
 
-// ── SHOP 11 — Fresh Mart ──
-p.run(s11, "Rice 1kg",          "Grocery",  58,  200, img("Rice 1kg"));
-p.run(s11, "Wheat Flour 1kg",   "Grocery",  52,  180, img("Wheat Flour 1kg"));
-p.run(s11, "Sugar 1kg",         "Grocery",  42,  200, img("Sugar 1kg"));
-p.run(s11, "Cooking Oil 1L",    "Grocery",  175, 120, img("Cooking Oil 1L"));
-p.run(s11, "Salt 1kg",          "Grocery",  18,  300, img("Salt 1kg"));
-p.run(s11, "Milk 500ml",        "Grocery",  24,  250, img("Milk 500ml"));
-p.run(s11, "Bread",             "Grocery",  32,  100, img("Bread"));
-p.run(s11, "Eggs (6 pack)",     "Grocery",  58,  150, img("Eggs (6 pack)"));
-p.run(s11, "Butter 100g",       "Grocery",  52,  100, img("Butter 100g"));
-p.run(s11, "Tea Powder 250g",   "Grocery",  85,  150, img("Tea Powder 250g"));
-p.run(s11, "Coffee Powder",     "Grocery",  105, 120, img("Coffee Powder"));
-p.run(s11, "Turmeric Powder",   "Grocery",  32,  180, img("Turmeric Powder"));
-p.run(s11, "Chilli Powder",     "Grocery",  38,  180, img("Chilli Powder"));
-p.run(s11, "Coriander Powder",  "Grocery",  28,  180, img("Coriander Powder"));
-p.run(s11, "Soap",              "Grocery",  38,  200, img("Soap"));
-p.run(s11, "Shampoo 200ml",     "Grocery",  115, 100, img("Shampoo 200ml"));
-p.run(s11, "Toothpaste",        "Grocery",  60,  150, img("Toothpaste"));
-p.run(s11, "Detergent 500g",    "Grocery",  80,  130, img("Detergent 500g"));
-p.run(s11, "Biscuits",          "Food",     22,  250, img("Biscuits"));
-p.run(s11, "Chips",             "Food",     28,  200, img("Chips"));
-p.run(s11, "Instant Noodles",   "Food",     14,  300, img("Instant Noodles"));
-p.run(s11, "Chocolate",         "Food",     48,  180, img("Chocolate"));
-p.run(s11, "Juice 1L",          "Food",     85,  100, img("Juice 1L"));
-p.run(s11, "Pen",               "Stationery", 10, 100, img("Pen"));
-p.run(s11, "Notebook",          "Stationery", 42, 80,  img("Notebook"));
-
-// ── SHOP 12 — Daily Needs Store ──
-p.run(s12, "Rice 1kg",          "Grocery",  62,  150, img("Rice 1kg"));
-p.run(s12, "Sugar 1kg",         "Grocery",  48,  150, img("Sugar 1kg"));
-p.run(s12, "Milk 500ml",        "Grocery",  26,  200, img("Milk 500ml"));
-p.run(s12, "Bread",             "Grocery",  35,  80,  img("Bread"));
-p.run(s12, "Cooking Oil 1L",    "Grocery",  182, 100, img("Cooking Oil 1L"));
-p.run(s12, "Eggs (6 pack)",     "Grocery",  62,  120, img("Eggs (6 pack)"));
-p.run(s12, "Tea Powder 250g",   "Grocery",  92,  100, img("Tea Powder 250g"));
-p.run(s12, "Salt 1kg",          "Grocery",  22,  250, img("Salt 1kg"));
-p.run(s12, "Soap",              "Grocery",  42,  180, img("Soap"));
-p.run(s12, "Toothpaste",        "Grocery",  68,  120, img("Toothpaste"));
-p.run(s12, "Paracetamol",       "Medicine", 16,  300, img("Paracetamol"));
-p.run(s12, "Hand Sanitizer",    "Medicine", 80,  150, img("Hand Sanitizer"));
-p.run(s12, "Bandage",           "Medicine", 28,  200, img("Bandage"));
-p.run(s12, "Biscuits",          "Food",     22,  200, img("Biscuits"));
-p.run(s12, "Chips",             "Food",     32,  180, img("Chips"));
-p.run(s12, "Instant Noodles",   "Food",     15,  250, img("Instant Noodles"));
-p.run(s12, "Pen",               "Stationery", 10, 150, img("Pen"));
-p.run(s12, "Pencil",            "Stationery", 5,  200, img("Pencil"));
-p.run(s12, "Notebook",          "Stationery", 45, 80,  img("Notebook"));
-
-// ── SHOP 13 — City Mart ──
-p.run(s13, "Rice 1kg",          "Grocery",  55,  250, img("Rice 1kg"));
-p.run(s13, "Wheat Flour 1kg",   "Grocery",  50,  200, img("Wheat Flour 1kg"));
-p.run(s13, "Sugar 1kg",         "Grocery",  44,  200, img("Sugar 1kg"));
-p.run(s13, "Cooking Oil 1L",    "Grocery",  170, 150, img("Cooking Oil 1L"));
-p.run(s13, "Milk 500ml",        "Grocery",  25,  300, img("Milk 500ml"));
-p.run(s13, "Bread",             "Grocery",  33,  120, img("Bread"));
-p.run(s13, "Eggs (6 pack)",     "Grocery",  60,  150, img("Eggs (6 pack)"));
-p.run(s13, "Tea Powder 250g",   "Grocery",  88,  130, img("Tea Powder 250g"));
-p.run(s13, "Coffee Powder",     "Grocery",  108, 100, img("Coffee Powder"));
-p.run(s13, "Soap",              "Grocery",  36,  220, img("Soap"));
-p.run(s13, "Shampoo 200ml",     "Grocery",  118, 90,  img("Shampoo 200ml"));
-p.run(s13, "Toothpaste",        "Grocery",  62,  160, img("Toothpaste"));
-p.run(s13, "Detergent 500g",    "Grocery",  82,  140, img("Detergent 500g"));
-p.run(s13, "Turmeric Powder",   "Grocery",  34,  160, img("Turmeric Powder"));
-p.run(s13, "Chilli Powder",     "Grocery",  36,  160, img("Chilli Powder"));
-p.run(s13, "Biscuits",          "Food",     20,  300, img("Biscuits"));
-p.run(s13, "Chips",             "Food",     30,  220, img("Chips"));
-p.run(s13, "Chocolate",         "Food",     45,  200, img("Chocolate"));
-p.run(s13, "Instant Noodles",   "Food",     13,  350, img("Instant Noodles"));
-p.run(s13, "Juice 1L",          "Food",     88,  120, img("Juice 1L"));
-p.run(s13, "Paracetamol",       "Medicine", 14,  400, img("Paracetamol"));
-p.run(s13, "Hand Sanitizer",    "Medicine", 78,  180, img("Hand Sanitizer"));
-p.run(s13, "Pen",               "Stationery", 10, 200, img("Pen"));
-p.run(s13, "Notebook",          "Stationery", 40, 100, img("Notebook"));
-p.run(s13, "Pencil",            "Stationery", 5,  300, img("Pencil"));
-
 // ── RATINGS ──
 const r = db.prepare("INSERT INTO ratings (user_id, shop_id, rating, review) VALUES (?, ?, ?, ?)");
 const u1 = c1.lastInsertRowid, u2 = c2.lastInsertRowid, u3 = c3.lastInsertRowid, u4 = c4.lastInsertRowid;
@@ -465,13 +379,6 @@ r.run(u1, s9, 5, "Best stationery shop!");
 r.run(u3, s9, 5, "Everything available here.");
 r.run(u2, s10, 5, "Love the organic products!");
 r.run(u4, s10, 5, "Very healthy options available.");
-r.run(u1, s11, 5, "Fresh Mart is so convenient, very close by!");
-r.run(u2, s11, 4, "Good prices on daily essentials.");
-r.run(u3, s11, 5, "Always fresh stock available.");
-r.run(u1, s12, 4, "Daily Needs has everything I need.");
-r.run(u4, s12, 4, "Reasonable prices and friendly staff.");
-r.run(u2, s13, 5, "City Mart is my go-to shop!");
-r.run(u3, s13, 4, "Great variety and good prices.");
 
 console.log("✅ Database seeded successfully!");
 console.log("");
@@ -485,5 +392,5 @@ console.log("  Shop Owners: ramesh@gmail.com, priya@gmail.com, suresh@gmail.com,
 console.log("               vijay@gmail.com, lakshmi@gmail.com, murugan@gmail.com, deepa@gmail.com");
 console.log("               senthil@gmail.com, anitha@gmail.com");
 console.log("");
-console.log("Shops: 13 shops — 10 across Chennai + Fresh Mart, Daily Needs Store, City Mart near base location");
+console.log("Shops: 10 shops across Chennai");
 console.log("Products: 130+ products across Grocery, Electronics, Medicine, Food, Clothing, Stationery");

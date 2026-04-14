@@ -71,7 +71,7 @@ function getPriceBadge(priceStats, productName, price) {
 }
 
 export default function CustomerDashboard({ navSearch, triggerSearch, viewMode }) {
-  const DEFAULT_LOCATION = { lat: 11.295485, lng: 77.663316 }; // matches seed.js BASE_LAT/BASE_LNG
+  const DEFAULT_LOCATION = { lat: 13.2614, lng: 80.0275 };
   const userId = localStorage.getItem("user_id");
   const navigate = useNavigate();
 
@@ -103,19 +103,9 @@ export default function CustomerDashboard({ navSearch, triggerSearch, viewMode }
     setUserLocation(DEFAULT_LOCATION);
     navigator.geolocation.getCurrentPosition(
       pos => setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
-      () => setUserLocation(DEFAULT_LOCATION),
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      () => {}, { enableHighAccuracy: true, timeout: 8000 }
     );
   }, []);
-
-  // Auto-search on page refresh if a previous search term exists
-  const autoSearched = useRef(false);
-  useEffect(() => {
-    if (userLocation && navSearch?.trim() && !autoSearched.current) {
-      autoSearched.current = true;
-      searchProduct();
-    }
-  }, [userLocation]);
 
   const showToast = msg => { setToast(msg); setTimeout(() => setToast(""), 3000); };
 
@@ -496,7 +486,7 @@ export default function CustomerDashboard({ navSearch, triggerSearch, viewMode }
           {/* MAP PANEL */}
           {showMap && (
             <div style={{ width: "42%", flexShrink: 0, borderLeft: "1px solid #1e293b" }}>
-              <MapContainer center={userLocation ? [userLocation.lat, userLocation.lng] : [11.295485, 77.663316]} zoom={13} style={{ height: "100%", width: "100%" }}>
+              <MapContainer center={userLocation ? [userLocation.lat, userLocation.lng] : [13.0895, 80.2739]} zoom={13} style={{ height: "100%", width: "100%" }}>
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <FitBounds shops={filtered} userLocation={userLocation} />
                 {userLocation && <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}><Popup>📍 You are here</Popup></Marker>}

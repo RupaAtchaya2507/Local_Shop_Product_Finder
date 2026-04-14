@@ -17,14 +17,12 @@ function Layout() {
   const hideNavbar = NO_NAVBAR.includes(location.pathname);
   const isCustomer = location.pathname === "/customer";
 
-  const [navSearch, setNavSearchState] = useState(() => localStorage.getItem("last_search") || "");
-  const setNavSearch = (val) => { setNavSearchState(val); localStorage.setItem("last_search", val); };
+  const [navSearch, setNavSearch] = useState("");
   const [triggerSearch, setTriggerSearch] = useState(0);
   const [viewMode, setViewMode] = useState("list");
 
   const handleNavSearch = () => {
     if (location.pathname !== "/customer") navigate("/customer");
-    localStorage.setItem("last_search", navSearch);
     setTriggerSearch(t => t + 1);
   };
 
